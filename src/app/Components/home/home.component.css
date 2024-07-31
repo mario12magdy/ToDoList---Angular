@@ -1,0 +1,30 @@
+.custom{
+    background-color: rgba(9, 181, 238, 0.612);
+    backdrop-filter: blur(10px);
+}
+.customTable{
+    background-color: rgba(9, 181, 238, 0.612);
+    backdrop-filter: blur(10px);
+}
+#missionInput::placeholder,#detailsInput::placeholder{
+    color: #ffffff;
+  
+  }
+#missionInput,#detailsInput{
+    color: #ffffff;
+    backdrop-filter: blur(20px);
+
+}
+
+#btn{
+    background-color: rgba(9, 181, 238, 0.612);
+    backdrop-filter: blur(10px);
+    color: #ffffff;
+    
+}
+#btn2{
+    background-color: rgba(243, 24, 24, 0.861);
+    backdrop-filter: blur(10px);
+    color: #ffffff;
+    
+}

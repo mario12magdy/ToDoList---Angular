@@ -1,0 +1,71 @@
+<div class="container ">
+   
+
+ <div class="row ">
+    <div class=" col-md-10 d-flex mt-3 mb-5 align-items-center  justify-content-center  border border-3 border-white rounded-5 mx-auto custom">
+        <img src="./assets/images/—Pngtree—business work to-do list_4896759.png" width="60" alt="">
+        <h1 class="ms-3 h4  text-white text-center">WIDEBOT - To Do List App</h1>
+    </div>
+ </div>
+    
+
+    
+    <div class="row mx-auto mb-3">
+        <div class="col-md-12">
+            <input type="text" #missionInput class="form-control  mx-auto bg-transparent" [(ngModel)]="newMission.mission" placeholder="Enter Mission..." id="missionInput">
+        </div>
+        
+    </div>
+    <div class="row mx-auto mb-3">
+        <div class="col-md-12">
+            
+            <input type="text" class="form-control mx-auto bg-transparent" [(ngModel)]="newMission.details" #detailsInput placeholder="Enter Mession Details..." id="detailsInput">
+        </div>
+       
+    </div>
+    
+    <div class="row mx-auto justify-content-between  mb-3">
+        
+        <div class="col-4">
+            <button (click)="addMission(missionInput, detailsInput)" class="btn " id="btn">Add Mission</button>
+        </div>
+        
+        <div class="col-4 justify-content-end   d-flex">
+            @if (tableBoolean){
+                <button (click)="deleteAll()" class="btn " id="btn2">Delete All</button>
+            }
+            
+        </div>
+    </div>
+   @if (tableBoolean) {
+    <table  class=" customTable text-light  w-100 rounded-3  table-responsive-sm">
+        <thead>
+         <tr>
+             <th class="text-center p-2">N</th>
+             <th class="text-center p-2">Mission</th>
+             <th class="text-center p-2">Details</th>
+             <th class="text-center p-2">Edit</th>
+             <th class="text-center p-2">Delete</th>
+         </tr>
+        </thead>
+        <tbody>
+            @for(mission of missions; track $index){
+                <tr>
+                    <td class="text-center p-2">{{$index+1}}</td>
+                    <td class="text-center p-2">{{mission.mission}}</td>
+                    <td class="text-center p-2">{{mission.details}}</td>
+                    <td class="text-center p-2">
+                        <button class="btn btn-success" (click)="editMission($index)">Edit</button>
+                    </td>
+                    <td class="text-center p-2">
+                        <button class="btn btn-danger" (click)="deleteMission($index)">Delete</button>
+                    </td>
+                </tr>
+            }
+            
+        </tbody>
+       
+        
+     </table>
+   }
+</div>
